@@ -22,6 +22,11 @@
   a {
     @apply transition-colors;
   }
+
+  /* Better anchor scrolling for fixed header across devices */
+  section {
+    scroll-margin-top: 96px;
+  }
 }
 
 @layer utilities {

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -14,6 +14,15 @@ import AnimatedOrbs from './components/AnimatedOrbs'
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false)
+
+  // Ensure reloads always land at the top (home) instead of keeping deep hashes
+  useEffect(() => {
+    if (window?.location?.hash) {
+      const base = import.meta.env.BASE_URL || '/'
+      window.history.replaceState(null, '', base)
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
 
   return (
     <>
