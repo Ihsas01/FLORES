@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import ProductShowcase from './components/ProductShowcase'
+import About from './components/About'
 import Counters from './components/Counters'
 import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
@@ -33,6 +34,7 @@ function App() {
         <AnimatedOrbs />
         <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
         <Hero />
+        <About />
         <ProductShowcase />
         <Counters />
         <Testimonials />
