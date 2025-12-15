@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import withBase from '../utils/assetPath'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -19,7 +20,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="/images/logo.png"
+                src={withBase('images/logo.png')}
                 alt="Flores logo"
                 className="h-10 w-auto"
                 onError={(e) => {

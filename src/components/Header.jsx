@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaBars, FaTimes, FaSun, FaMoon, FaChevronRight } from 'react-icons/fa'
+import withBase from '../utils/assetPath'
 
 const Header = ({ isDarkMode, setIsDarkMode }) => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -73,7 +74,7 @@ const logoTextColor = 'text-white font-semibold italic';
           aria-label="Go to home"
         >
           <img
-            src="/images/logo.png"
+            src={withBase('images/logo.png')}
             alt="Flores logo"
             className="h-10 w-auto"
             onError={(e) => {

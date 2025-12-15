@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { FaShoppingBag, FaEnvelope } from 'react-icons/fa'
+import withBase from '../utils/assetPath'
 
 const Hero = () => {
   const containerVariants = {
@@ -42,7 +43,7 @@ const Hero = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 filter blur-sm"
           style={{
-            backgroundImage: `url('/images/flores-hero-bg.jpg')`,
+            backgroundImage: `url('${withBase('images/flores-hero-bg.jpg')}')`,
           }}
         />
         {/* Fallback gradient background - shows behind image or if image fails */}

@@ -2,6 +2,7 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { FaShoppingCart } from 'react-icons/fa'
+import withBase from '../utils/assetPath'
 
 const ProductShowcase = () => {
   const ref = useRef(null)
@@ -13,56 +14,56 @@ const ProductShowcase = () => {
       name: 'ULTRAFRESH',
       fullName: 'Ultra Fresh LAUNDRY WASH 2L',
       price: 'Rs 1,150.00 - Rs 3,250.00',
-      image: '/images/products/2L-UltraFresh.png',
+      image: withBase('images/products/2L-UltraFresh.png'),
       buttonText: 'Order Now',
     },
     {
       name: 'ABAYA WASH',
       fullName: 'Flores Abaya Wash',
       price: 'Rs 650.00 - Rs 2,900.00',
-      image: '/images/products/Abaya-Wash-2L-.png',
+      image: withBase('images/products/Abaya-Wash-2L-.png'),
       buttonText: 'Order Now',
     },
     {
       name: 'BABY LAUNDRY WASH',
       fullName: 'Flores Baby Laundry Wash',
       price: 'Rs 650.00 - Rs 2,900.00',
-      image: '/images/products/Baby-Laundry-2L.png',
+      image: withBase('images/products/Baby-Laundry-2L.png'),
       buttonText: 'Order Now',
     },
     {
       name: 'HAND WASH',
       fullName: 'Flores Hand Wash',
       price: 'Rs 400.00 - Rs 2,750.00',
-      image: '/images/products/Hand-Wash-2L-Rose.png',
+      image: withBase('images/products/Hand-Wash-2L-Rose.png'),
       buttonText: 'Order Now',
     },
     {
       name: 'DISH WASH',
       fullName: 'Flores Dish Wash',
       price: 'Rs 425.00 - Rs 3,000.00',
-      image: '/images/products/Dish-Wash-2LL.png',
+      image: withBase('images/products/Dish-Wash-2LL.png'),
       buttonText: 'Order Now',
     },
     {
       name: 'BABY DISH WASH',
       fullName: 'Flores Baby Dish Wash',
       price: 'Rs 450.00 - Rs 2,750.00',
-      image: '/images/products/Baby-Dish-Wash-2L.png',
+      image: withBase('images/products/Baby-Dish-Wash-2L.png'),
       buttonText: 'Order Now',
     },
     {
       name: 'TILE CLEANER',
       fullName: 'Flores Tile Cleaner',
       price: 'Rs 400.00 - Rs 2,500.00',
-      image: '/images/products/Tile-Cleaner-2L.png',
+      image: withBase('images/products/Tile-Cleaner-2L.png'),
       buttonText: 'Order Now',
     },
     {
       name: 'TOILET CLEANER',
       fullName: 'Flores Toilet Cleaner',
       price: 'Rs 500.00 - Rs 2,500.00',
-      image: '/images/products/Toilet-Cleaner-2L.png',
+      image: withBase('images/products/Toilet-Cleaner-2L.png'),
       buttonText: 'Order Now',
     },
     // Products from 2nd image (4 products)
@@ -70,28 +71,28 @@ const ProductShowcase = () => {
       name: 'AIR FRESHENER',
       fullName: 'AIR FRESHENER LAVENDER 500 ML',
       price: 'Rs 875.00',
-      image: '/images/products/Air-Freshener-Lavender.png',
+      image: withBase('images/products/Air-Freshener-Lavender.png'),
       buttonText: 'Order Now',
     },
     {
       name: 'ALL PURPOSE CLEANER',
       fullName: 'ALL PURPOSE CLEANER LEMONGRASS 500ML',
       price: 'Rs 450.00',
-      image: '/images/products/all-purpose.png',
+      image: withBase('images/products/all-purpose.png'),
       buttonText: 'Add to cart',
     },
     {
       name: 'CAR DIFFUSER',
       fullName: 'Car Diffuser',
       price: 'Rs 1,200.00 - Rs 1,500.00',
-      image: '/images/products/Car Diffuser.png',
+      image: withBase('images/products/Car Diffuser.png'),
       buttonText: 'Order Now',
     },
     {
       name: 'PET SHAMPOO',
       fullName: 'Soft & Comfortable Pet Shampoo French lavender 500 ML',
       price: 'Rs 750.00',
-      image: '/images/products/Pet-Shampo.png',
+      image: withBase('images/products/Pet-Shampo.png'),
       buttonText: 'Add to cart',
     },
   ]
