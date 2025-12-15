@@ -98,7 +98,7 @@ const Testimonials = () => {
                 <SwiperSlide key={index}>
                   <motion.div
                     whileHover={{ y: -10, scale: 1.02 }}
-                    className="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col"
+                    className="glass-card rounded-2xl p-8 shadow-lg h-full flex flex-col"
                   >
                     <div className="flex items-center gap-1 mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (

@@ -16,6 +16,7 @@ const ProductShowcase = () => {
       price: 'Rs 1,150.00 - Rs 3,250.00',
       image: withBase('images/products/2L-UltraFresh.png'),
       buttonText: 'Order Now',
+      badge: 'Bestseller',
     },
     {
       name: 'ABAYA WASH',
@@ -37,6 +38,7 @@ const ProductShowcase = () => {
       price: 'Rs 400.00 - Rs 2,750.00',
       image: withBase('images/products/Hand-Wash-2L-Rose.png'),
       buttonText: 'Order Now',
+      badge: 'New',
     },
     {
       name: 'DISH WASH',
@@ -87,6 +89,7 @@ const ProductShowcase = () => {
       price: 'Rs 1,200.00 - Rs 1,500.00',
       image: withBase('images/products/Car Diffuser.png'),
       buttonText: 'Order Now',
+      badge: 'Premium',
     },
     {
       name: 'PET SHAMPOO',
@@ -119,7 +122,7 @@ const ProductShowcase = () => {
   }
 
   return (
-    <section id="products" ref={ref} className="py-20 bg-white">
+    <section id="products" ref={ref} className="py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -146,21 +149,23 @@ const ProductShowcase = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="group rounded-2xl bg-white/90 backdrop-blur border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
             >
               {/* Product Image Container */}
-              <div className="relative bg-gray-100 h-64 flex items-center justify-center overflow-hidden">
+              <div className="relative h-64 flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 to-white">
                 {/* Order Badge */}
-                <div className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">
-                  Order
+                <div className="absolute top-3 right-3">
+                  <div className="bg-black/80 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+                    {product.badge ?? 'Order'}
+                  </div>
                 </div>
                 
                 {/* Product Image */}
                 <img
                   src={product.image}
                   alt={product.fullName}
-                  className="w-full h-full object-contain p-4"
+                  className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-105"
                   onError={(e) => {
                     // Fallback to placeholder if image doesn't exist
                     e.target.src = 'https://via.placeholder.com/300x300?text=Flores+Product'
@@ -170,16 +175,21 @@ const ProductShowcase = () => {
               </div>
               
               {/* Product Info */}
-              <div className="p-5">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{product.name}</h3>
-                <p className="text-sm text-gray-600 mb-3 line-clamp-2">{product.fullName}</p>
-                <p className="text-lg font-semibold text-eco-green mb-4">{product.price}</p>
+              <div className="p-5 space-y-3">
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="text-lg font-bold text-gray-900">{product.name}</h3>
+                  <span className="text-xs font-semibold uppercase tracking-wide text-eco-dark bg-eco-green/10 px-3 py-1 rounded-full">
+                    Eco
+                  </span>
+                </div>
+                <p className="text-sm text-gray-600 line-clamp-2">{product.fullName}</p>
+                <p className="text-lg font-semibold text-eco-green">{product.price}</p>
                 
                 {/* Order Button */}
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full bg-black text-white px-4 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors"
+                  className="w-full button-primary px-4 py-3 rounded-lg font-semibold flex items-center justify-center gap-2"
                 >
                   <FaShoppingCart />
                   {product.buttonText}

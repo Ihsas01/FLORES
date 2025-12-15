@@ -120,7 +120,7 @@ const Contact = () => {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-50 rounded-2xl p-8 shadow-lg">
+            <form onSubmit={handleSubmit(onSubmit)} className="glass-card rounded-2xl p-8 shadow-lg">
               <div className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">

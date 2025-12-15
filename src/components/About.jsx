@@ -82,7 +82,7 @@ const About = () => {
                 key={index}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05, y: -10 }}
-                className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group"
+                className="glass-card rounded-xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer group"
               >
                 <div className={`${category.color} w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform`}>
                   <Icon size={28} />

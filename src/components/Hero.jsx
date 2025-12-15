@@ -116,7 +116,7 @@ const Hero = () => {
             whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(16, 185, 129, 0.3)' }}
             whileTap={{ scale: 0.95 }}
             onClick={() => scrollToSection('#products')}
-            className="bg-eco-green text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center gap-2 shadow-lg hover:bg-eco-dark transition-colors"
+            className="button-primary px-8 py-4 rounded-full font-semibold text-lg flex items-center gap-2"
           >
             <FaShoppingBag />
             Shop Now
@@ -126,7 +126,7 @@ const Hero = () => {
             whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(16, 185, 129, 0.3)' }}
             whileTap={{ scale: 0.95 }}
             onClick={() => scrollToSection('#contact')}
-            className="bg-white text-eco-green px-8 py-4 rounded-full font-semibold text-lg flex items-center gap-2 shadow-lg border-2 border-eco-green hover:bg-eco-green/5 transition-colors"
+            className="bg-white text-eco-green px-8 py-4 rounded-full font-semibold text-lg flex items-center gap-2 shadow-lg border-2 border-eco-green hover:bg-eco-green/5 transition-all"
           >
             <FaEnvelope />
             Contact Us
