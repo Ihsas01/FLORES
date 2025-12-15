@@ -143,7 +143,7 @@ const ProductShowcase = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-7"
         >
           {products.map((product, index) => (
             <motion.div
@@ -153,7 +153,7 @@ const ProductShowcase = () => {
               className="group rounded-2xl bg-white/90 backdrop-blur border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
             >
               {/* Product Image Container */}
-              <div className="relative h-64 flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 to-white">
+              <div className="relative h-56 md:h-60 flex items-center justify-center overflow-hidden bg-gradient-to-br from-white to-gray-50">
                 {/* Order Badge */}
                 <div className="absolute top-3 right-3">
                   <div className="bg-black/80 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
@@ -165,7 +165,7 @@ const ProductShowcase = () => {
                 <img
                   src={product.image}
                   alt={product.fullName}
-                  className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-contain p-4 md:p-5 transition-transform duration-500 group-hover:scale-104"
                   onError={(e) => {
                     // Fallback to placeholder if image doesn't exist
                     e.target.src = 'https://via.placeholder.com/300x300?text=Flores+Product'
@@ -189,7 +189,7 @@ const ProductShowcase = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full button-primary px-4 py-3 rounded-lg font-semibold flex items-center justify-center gap-2"
+                  className="w-full button-primary px-4 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 shadow-md"
                 >
                   <FaShoppingCart />
                   {product.buttonText}
