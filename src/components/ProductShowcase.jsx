@@ -8,6 +8,7 @@ const ProductShowcase = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const [query, setQuery] = useState('')
+  const [showGallery, setShowGallery] = useState(false)
 
   const products = [
     // Products from 3rd image (8 products)
@@ -132,6 +133,24 @@ const ProductShowcase = () => {
     )
   }, [products, query])
 
+  const galleryItems = useMemo(() => {
+    const modules = import.meta.glob('../images/**/*.{png,jpg,jpeg}', {
+      eager: true,
+      as: 'url',
+    })
+    return Object.entries(modules)
+      .filter(([path]) => !/logo|hero/i.test(path))
+      .map(([path, url]) => {
+        const parts = path.split('/')
+        const filename = parts.pop() || 'product'
+        const folder = parts.pop() || ''
+        const name =
+          (folder && folder !== 'images' ? `${folder} - ` : '') +
+          filename.replace(/\.\w+$/, '')
+        return { name, url }
+      })
+  }, [])
+
   return (
     <section id="products" ref={ref} className="py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50">
       <div className="container mx-auto px-4">
@@ -139,15 +158,27 @@ const ProductShowcase = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="mb-12 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our <span className="text-eco-green">Products</span>
-          </h2>
-          <div className="w-24 h-1 bg-eco-green mx-auto mb-4"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover our range of premium eco-friendly cleaning products
-          </p>
+          <div className="text-center md:text-left">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+              Our <span className="text-eco-green">Products</span>
+            </h2>
+            <div className="w-24 h-1 bg-eco-green mb-4 md:mb-3"></div>
+            <p className="text-lg text-gray-600 max-w-2xl">
+              Discover our range of premium eco-friendly cleaning products
+            </p>
+          </div>
+          <div className="flex justify-center md:justify-end">
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() => setShowGallery(true)}
+              className="button-primary px-5 py-3 rounded-full font-semibold shadow-lg flex items-center gap-2"
+            >
+              More products
+            </motion.button>
+          </div>
         </motion.div>
 
         {/* Search bar */}
@@ -229,6 +260,44 @@ const ProductShowcase = () => {
           )}
         </motion.div>
       </div>
+
+      {/* Gallery modal */}
+      {showGallery && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[80vh] overflow-y-auto p-6 space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-2xl font-bold text-gray-900">All Products</h3>
+              <button
+                onClick={() => setShowGallery(false)}
+                className="text-gray-500 hover:text-gray-800 font-semibold"
+                aria-label="Close gallery"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+              {galleryItems.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-xl border border-gray-100 bg-gray-50/70 p-3 shadow-sm flex flex-col items-center gap-2"
+                >
+                  <div className="w-full aspect-square bg-white rounded-lg flex items-center justify-center overflow-hidden">
+                    <img
+                      src={item.url}
+                      alt={item.name}
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="text-sm font-semibold text-gray-800 text-center line-clamp-2">
+                    {item.name}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
