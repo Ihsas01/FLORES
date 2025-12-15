@@ -277,9 +277,10 @@ const ProductShowcase = () => {
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {galleryItems.map((item, idx) => (
-                <div
+                <button
                   key={idx}
-                  className="rounded-xl border border-gray-100 bg-gray-50/70 p-3 shadow-sm flex flex-col items-center gap-2"
+                  onClick={() => window.open(item.url, '_blank', 'noopener,noreferrer')}
+                  className="rounded-xl border border-gray-100 bg-gray-50/70 p-3 shadow-sm flex flex-col items-center gap-2 transition hover:shadow-md"
                 >
                   <div className="w-full aspect-square bg-white rounded-lg flex items-center justify-center overflow-hidden">
                     <img
@@ -289,10 +290,7 @@ const ProductShowcase = () => {
                       loading="lazy"
                     />
                   </div>
-                  <div className="text-sm font-semibold text-gray-800 text-center line-clamp-2">
-                    {item.name}
-                  </div>
-                </div>
+                </button>
               ))}
             </div>
           </div>
