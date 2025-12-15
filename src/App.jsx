@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import About from './components/About'
 import ProductShowcase from './components/ProductShowcase'
 import Counters from './components/Counters'
 import Testimonials from './components/Testimonials'
@@ -10,6 +9,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 import ChatWidget from './components/ChatWidget'
+import AnimatedOrbs from './components/AnimatedOrbs'
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false)
@@ -30,9 +30,9 @@ function App() {
       </Helmet>
       
       <div className={isDarkMode ? 'dark' : ''}>
+        <AnimatedOrbs />
         <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
         <Hero />
-        <About />
         <ProductShowcase />
         <Counters />
         <Testimonials />
