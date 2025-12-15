@@ -74,7 +74,7 @@ const logoTextColor = 'text-white font-semibold italic';
           aria-label="Go to home"
         >
           <img
-            src={withBase('images/logo.png')}
+            src={withBase('images/newlogo.png')}
             alt="Flores logo"
             className="h-10 w-auto"
             onError={(e) => {

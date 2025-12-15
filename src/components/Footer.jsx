@@ -20,7 +20,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img
-                src={withBase('images/logo.png')}
+                src={withBase('images/newlogo.png')}
                 alt="Flores logo"
                 className="h-10 w-auto"
                 onError={(e) => {
