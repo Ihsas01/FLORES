@@ -22,12 +22,12 @@ const Footer = () => {
               <img
                 src={withBase('images/newlogo.png')}
                 alt="Flores logo"
-                className="h-10 w-auto"
+                className="h-10 w-auto brightness-0 invert drop-shadow"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none'
                 }}
               />
-              <span className="text-3xl font-bold italic text-white">Flores</span>
+              <span className="text-3xl font-extrabold text-white">Flores</span>
 
             </div>
             <p className="text-sm leading-relaxed">

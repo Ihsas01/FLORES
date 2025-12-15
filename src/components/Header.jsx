@@ -51,8 +51,8 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
     }
   }
 
- const linkColor = 'text-white hover:text-eco-green font-semibold italic';
-const logoTextColor = 'text-white font-semibold italic';
+const linkColor = 'text-white hover:text-eco-green font-semibold italic';
+const logoTextColor = 'text-white font-extrabold';
 
 
   return (
@@ -76,12 +76,12 @@ const logoTextColor = 'text-white font-semibold italic';
           <img
             src={withBase('images/newlogo.png')}
             alt="Flores logo"
-            className="h-10 w-auto"
+            className="h-10 w-auto brightness-0 invert drop-shadow"
             onError={(e) => {
               e.currentTarget.style.display = 'none'
             }}
           />
-          <span className={`text-3xl font-bold italic ${logoTextColor}`}>Flores</span>
+          <span className={`text-3xl ${logoTextColor}`}>Flores</span>
         </motion.button>
 
         {/* Desktop Navigation */}
