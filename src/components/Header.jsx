@@ -29,10 +29,18 @@ const Header = ({ isDarkMode, setIsDarkMode }) => {
   }, [])
 
   const productCategories = [
-    { name: 'Cleaning Products', href: '#products', filter: 'cleaning' },
-    { name: 'Laundry Products', href: '#products', filter: 'laundry' },
-    { name: 'Air Care Products', href: '#products', filter: 'aircare' },
-    { name: 'Pet Care Products', href: '#products', filter: 'petcare' },
+    { name: 'Floral-scented Hand Wash', href: '#products' },
+    { name: 'Laundry Wash', href: '#products' },
+    { name: 'Baby Laundry Wash', href: '#products' },
+    { name: 'Abaya Wash', href: '#products' },
+    { name: 'Thobe Wash', href: '#products' },
+    { name: 'Dish Wash', href: '#products' },
+    { name: 'Baby Dish Wash', href: '#products' },
+    { name: 'Pet Shampoo', href: '#products' },
+    { name: 'Air Fresheners', href: '#products' },
+    { name: 'Toilet Cleaners', href: '#products' },
+    { name: 'Tile Cleaners', href: '#products' },
+    { name: 'All-Purpose Cleaners', href: '#products' },
   ]
 
   const navLinks = [

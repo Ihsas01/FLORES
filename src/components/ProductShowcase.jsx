@@ -1,12 +1,13 @@
 import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaShoppingCart } from 'react-icons/fa'
+import { FaShoppingCart, FaSearch } from 'react-icons/fa'
 import withBase from '../utils/assetPath'
 
 const ProductShowcase = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const [query, setQuery] = useState('')
 
   const products = [
     // Products from 3rd image (8 products)
@@ -121,6 +122,16 @@ const ProductShowcase = () => {
     },
   }
 
+  const filteredProducts = useMemo(() => {
+    const q = query.trim().toLowerCase()
+    if (!q) return products
+    return products.filter(
+      (p) =>
+        p.name.toLowerCase().includes(q) ||
+        p.fullName.toLowerCase().includes(q)
+    )
+  }, [products, query])
+
   return (
     <section id="products" ref={ref} className="py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50">
       <div className="container mx-auto px-4">
@@ -139,13 +150,27 @@ const ProductShowcase = () => {
           </p>
         </motion.div>
 
+        {/* Search bar */}
+        <div className="max-w-2xl mx-auto mb-10">
+          <div className="relative">
+            <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search products (e.g., hand wash, baby, tile)..."
+              className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 bg-white shadow-sm focus:ring-2 focus:ring-eco-green focus:border-transparent transition-all"
+            />
+          </div>
+        </div>
+
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-7"
         >
-          {products.map((product, index) => (
+          {filteredProducts.map((product, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
@@ -197,6 +222,11 @@ const ProductShowcase = () => {
               </div>
             </motion.div>
           ))}
+          {filteredProducts.length === 0 && (
+            <div className="col-span-full text-center text-gray-600">
+              No products match “{query}”.
+            </div>
+          )}
         </motion.div>
       </div>
     </section>
