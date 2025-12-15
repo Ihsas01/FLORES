@@ -27,7 +27,7 @@ const Footer = () => {
                   e.currentTarget.style.display = 'none'
                 }}
               />
-              <span className="text-3xl font-bold italic text-eco-White">Flores</span>
+              <span className="text-3xl font-bold italic text-white">Flores</span>
 
             </div>
             <p className="text-sm leading-relaxed">

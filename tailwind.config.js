@@ -8,10 +8,11 @@ export default {
     extend: {
       colors: {
         eco: {
-          green: '#2d8659',
-          light: '#4ade80',
-          dark: '#166534',
-          accent: '#10b981',
+          // Brand palette
+          green: '#CF0F47',   // primary
+          accent: '#FF0B55',  // vibrant accent
+          light: '#FFDEDE',   // soft tint
+          dark: '#000000',    // deep contrast
         }
       },
       animation: {
