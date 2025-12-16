@@ -47,4 +47,10 @@ A clean, modern, and responsive React landing page designed to showcase **Flores
 
 ---
 
-© 2024 **Flores** – A Strategic Business Unit of **E‑Screen Systems**
+## Live Demo
+
+🔗 **Demo Link**: [https://ihsas01.github.io/FLORES/](https://ihsas01.github.io/FLORES/)
+
+---
+
+© 2024 **Flores** – A Strategic Business Unit of **E-Screen Systems**
