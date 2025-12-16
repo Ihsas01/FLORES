@@ -1,98 +1,50 @@
-# Flores - Premium Eco-Friendly Cleaning Products Landing Page
+# Flores – Premium Eco‑Friendly Cleaning Products
 
-A modern, responsive React landing page for Flores, showcasing premium eco-friendly cleaning and household products.
+A clean, modern, and responsive React landing page designed to showcase **Flores**, a brand offering premium eco‑friendly cleaning and household products.
 
-## Features
+---
 
-- 🎨 **Modern Design**: Premium eco-friendly branding with green & white theme
-- ✨ **Smooth Animations**: Framer Motion animations throughout
-- 📱 **Fully Responsive**: Mobile, tablet, and desktop optimized
-- 🚀 **Performance**: Lazy loading images and optimized components
-- ♿ **Accessible**: ARIA labels and keyboard navigation
-- 🔍 **SEO Optimized**: React Helmet for meta tags and Open Graph
-- 💬 **Interactive Chat**: AI chat widget for customer queries
-- 📱 **WhatsApp Integration**: Floating WhatsApp button
-- 📊 **Animated Counters**: Scroll-triggered metrics
-- 🎠 **Testimonials Carousel**: Swiper.js powered carousel
-- 📝 **Contact Form**: React Hook Form with validation
+## Key Features
 
-## Tech Stack
+* 🌿 **Premium Eco‑Friendly Design** – Green & white brand theme
+* 📱 **Fully Responsive** – Optimized for mobile, tablet, and desktop
+* ✨ **Smooth Animations** – Subtle, modern animations using Framer Motion
+* 🔍 **SEO Optimized** – Meta tags and Open Graph support
+* 💬 **AI Chat Widget** – Instant customer assistance
+* 📲 **WhatsApp Button** – Quick customer contact
+* 📊 **Animated Counters** – Highlight brand trust & growth
+* 📝 **Contact Form** – Simple and user‑friendly
 
-- **React 18** - UI library
-- **Vite** - Build tool
-- **Tailwind CSS** - Styling
-- **Framer Motion** - Animations
-- **React CountUp** - Animated counters
-- **React Helmet Async** - SEO
-- **React Hook Form** - Form handling
-- **Swiper.js** - Carousel component
-- **React Icons** - Icon library
+---
 
-## Getting Started
+## Tech Stack (Core)
 
-### Installation
+* **React 18**
+* **Vite**
+* **Tailwind CSS**
+* **Framer Motion**
+* **React Helmet Async**
+* **React Hook Form**
 
-```bash
-npm install
-```
+---
 
-### Development
+## Main Sections
 
-```bash
-npm run dev
-```
+1. **Hero Section** – Brand message with call‑to‑action
+2. **About Section** – Company overview and product categories
+3. **Product Showcase** – Cleaning and household products
+4. **Counters** – Business highlights
+5. **Testimonials** – Customer feedback
+6. **Contact Section** – Enquiry form and details
+7. **Footer** – Basic links and brand info
 
-The app will be available at `http://localhost:5173`
+---
 
-### Build
+## Contact Details
 
-```bash
-npm run build
-```
+* 📞 **Phone**: 076 391 3526
+* 📧 **Email**: [mohamedihsas001@gmail.com](mailto:mohamedihsas001@gmail.com)
 
-### Preview Production Build
+---
 
-```bash
-npm run preview
-```
-
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── Header.jsx          # Sticky header with navigation
-│   ├── Hero.jsx            # Hero section with CTAs
-│   ├── About.jsx           # About section with product categories
-│   ├── ProductShowcase.jsx # Product grid with hover effects
-│   ├── Counters.jsx        # Animated metrics
-│   ├── Testimonials.jsx    # Customer testimonials carousel
-│   ├── Contact.jsx         # Contact form and information
-│   ├── Footer.jsx          # Footer with links and social media
-│   ├── WhatsAppButton.jsx  # Floating WhatsApp button
-│   └── ChatWidget.jsx      # AI chat widget
-├── App.jsx                 # Main app component
-├── main.jsx               # Entry point
-└── index.css              # Global styles
-```
-
-## Sections
-
-1. **Hero Section**: Full-width hero with animated gradient background and CTAs
-2. **About Section**: Company information with product category cards
-3. **Product Showcase**: Grid layout of product categories with hover animations
-4. **Animated Counters**: Scroll-triggered metrics (Products Sold, Customers, etc.)
-5. **Testimonials**: Customer testimonials carousel
-6. **Contact**: Contact form with validation and map embed
-7. **Footer**: Company information, links, and social media
-
-## Contact Information
-
-- **Phone**: +94 74 119 77 37
-- **Email**: flores@eholdings.lk
-- **Address**: 638, Highlevel Road, Gangodawila, Nugegoda 10250
-
-## License
-
-© 2024 Flores - A Strategic Business Unit of E-Screen Systems
-
+© 2024 **Flores** – A Strategic Business Unit of **E‑Screen Systems**
